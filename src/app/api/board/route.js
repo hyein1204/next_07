@@ -35,14 +35,7 @@ import path from 'path'
 export async function POST(request){
 
     const formData = await request.formData(); // 
-    // console.log( formData )
-    // FormData {
-    //     [Symbol(state)]: [
-    //         { name: 'title', value: 'CSR' },
-    //         { name: 'body', value: 'client side  rendering' }
-    //     ]
-    // }
-     
+      
     const { title , content } = Object.fromEntries( formData )
 
     const newBoard = { id :`${ boards.length + 1 }`, title, content }
@@ -53,7 +46,7 @@ export async function POST(request){
     return Response.json( null, {
         status : 302,
         headers : {
-            Location : '/board'
+            Location : 'https://next-07-livid.vercel.app/board'
         }
     })
 }

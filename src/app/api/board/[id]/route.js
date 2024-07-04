@@ -41,7 +41,13 @@ export async function PUT(request, { params }){
     // 
     fs.writeFileSync(filePath, `export const boards = ${JSON.stringify(boards, null, 4)}`, 'utf-8')
 
-    return Response.json(updateBoard)
+    //return Response.json(updateBoard)
+    return Response.json( null, {
+        status : 302,
+        headers : {
+            Location : 'https://next-07-livid.vercel.app/board'
+        }
+    })
 }
 
 export async function DELETE(request, { params }){
@@ -55,7 +61,13 @@ export async function DELETE(request, { params }){
     // 
     fs.writeFileSync(filePath, `export const boards = ${JSON.stringify(boards, null, 4)}`, 'utf-8')
 
-    return Response.json(deleted[0])
+    //return Response.json(deleted[0])
+    return Response.json( null, {
+        status : 302,
+        headers : {
+            Location : 'https://next-07-livid.vercel.app/board'
+        }
+    })
 }
 
  
