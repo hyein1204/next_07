@@ -13,7 +13,7 @@ const Boards = () => {
   const [ boards, setBoards ] = useState([])
 
   const getBoards = async ()=>{
-      const url = `http://localhost:3000/api/board`
+      const url = `https://next-07-livid.vercel.app/api/board`
       const res = await fetch(url);
       const boards = await res.json();
 
